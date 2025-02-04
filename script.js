@@ -25,21 +25,37 @@ let selectedValue = "";
 let firstValue = "";
 let secondValue = "";
 let operation = "";
+let overwriteIndicator = false;
+let equalIndicator = false;
 
 numberButtons.forEach((button) => button.addEventListener("click", () => {
   const number = button.id;
-  input.value = number;
-  selectedValue = number;
+  if (equalIndicator) {
+    firstValue = "";
+    equalIndicator = false;
+  }
+
+  if (overwriteIndicator){
+    input.value = number;
+    selectedValue = number;
+    overwriteIndicator = false;
+  } else {
+    input.value += number;
+    selectedValue += number;
+  }
 }));
 
 operatorButtons.forEach((button) => button.addEventListener("click", () => {
+  
+  
   if (firstValue === "") {
     firstValue = selectedValue;
     selectedValue = "";
+    overwriteIndicator = true;
   };
 
   if (operation === "") {
-    selectedValue = "";
+    overwriteIndicator = true;
     operation = button.id;
   } else if (firstValue !== "" && selectedValue !== "") {
     calculate();
@@ -49,10 +65,13 @@ operatorButtons.forEach((button) => button.addEventListener("click", () => {
   }
 }));
 
-equalButton.addEventListener("click", calculate)
+equalButton.addEventListener("click", () => {
+  calculate();
+  equalIndicator = true;
+});
 
 clearButton.addEventListener("click", () => {
-  input.value = 0;
+  input.value = "";
   selectedValue = "";
   firstValue = "";
   secondValue = "";
@@ -83,6 +102,7 @@ function calculate() {
     secondValue = "";
     operation = "";
     selectedValue = "";
+    overwriteIndicator = true;
   }
 }
 
