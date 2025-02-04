@@ -98,6 +98,7 @@ function calculate() {
         result = divide(firstValue,secondValue);
         break;
     }
+    result = Math.floor(result*(10**7))/(10**7);
     [input.value, firstValue] = [result, result];
     secondValue = "";
     operation = "";
