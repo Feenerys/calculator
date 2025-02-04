@@ -29,7 +29,19 @@ let overwriteIndicator = false;
 let equalIndicator = false;
 
 numberButtons.forEach((button) => button.addEventListener("click", () => {
-  const number = button.id;
+  let number = "";
+  if (button.id === "decimal"){
+    if (input.value.includes(".")){
+      return
+    } else if (input.value === ""){
+      number = "0.";
+    } else {
+      number = '.';
+    }
+  } else{
+    number = button.id;
+  }
+
   if (equalIndicator) {
     firstValue = "";
     equalIndicator = false;
