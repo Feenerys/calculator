@@ -79,9 +79,9 @@ clearButton.addEventListener("click", () => {
 });
 
 function calculate() {
-  secondValue = selectedValue;
   
   if (operation !== "") {
+    secondValue = selectedValue;
     let result = 0;
     
     switch (operation) {
