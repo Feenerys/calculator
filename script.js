@@ -46,7 +46,9 @@ numberButtons.forEach((button) => button.addEventListener("click", () => {
 }));
 
 operatorButtons.forEach((button) => button.addEventListener("click", () => {
-  
+  if (equalIndicator) {
+    equalIndicator = false;
+  }
   
   if (firstValue === "") {
     firstValue = selectedValue;
@@ -66,8 +68,7 @@ operatorButtons.forEach((button) => button.addEventListener("click", () => {
 }));
 
 equalButton.addEventListener("click", () => {
-  calculate();
-  equalIndicator = true;
+  calculate(true);
 });
 
 clearButton.addEventListener("click", () => {
@@ -78,8 +79,8 @@ clearButton.addEventListener("click", () => {
   operation = "";
 });
 
-function calculate() {
-  
+function calculate(equalUsed = false) {
+
   if (operation !== "") {
     secondValue = selectedValue;
     let result = 0;
@@ -104,6 +105,7 @@ function calculate() {
     operation = "";
     selectedValue = "";
     overwriteIndicator = true;
+    if (equalUsed) {equalIndicator = true};
   }
 }
 
