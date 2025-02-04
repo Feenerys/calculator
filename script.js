@@ -109,5 +109,4 @@ function calculate(equalUsed = false) {
   }
 }
 
-// TODO: pressing digits adds to the string,
 
