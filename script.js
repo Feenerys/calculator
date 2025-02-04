@@ -18,6 +18,7 @@ const divide = function(a,b) {
 const numberButtons = document.querySelectorAll(".numbers");
 const operatorButtons = document.querySelectorAll(".operators");
 const equalButton = document.querySelector("#equals");
+const clearButton = document.querySelector("#clear");
 
 const input = document.querySelector("input");
 let selectedValue = "";
@@ -50,6 +51,13 @@ operatorButtons.forEach((button) => button.addEventListener("click", () => {
 
 equalButton.addEventListener("click", calculate)
 
+clearButton.addEventListener("click", () => {
+  input.value = 0;
+  selectedValue = "";
+  firstValue = "";
+  secondValue = "";
+  operation = "";
+});
 
 function calculate() {
   secondValue = selectedValue;
@@ -78,5 +86,5 @@ function calculate() {
   }
 }
 
-// TODO: clear button, pressing digits adds to the string,
+// TODO: pressing digits adds to the string,
 
