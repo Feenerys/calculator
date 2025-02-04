@@ -11,7 +11,7 @@ const multiply = function(a,b) {
   };
 
 const divide = function(a,b) {
-    if (b === 0) {return "no"};
+    if (b == 0) {return "80085"};
     return +a/+b
   };   
 
