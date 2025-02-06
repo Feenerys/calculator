@@ -10,10 +10,14 @@
     <div class="calculator">
         <input placeholder="0">
         <div class="buttons">
-            <div class="row">
-                <button id="clear">AC</button>
-                <button id="backspace">⌫</button>
-                <button class="operators" id="divide">/</button>
+            <div class="row three">
+                <div class="column">
+                    <button id="clear" class="large">AC</button>
+                </div>
+                <div class="column">
+                    <button id="backspace">⌫</button>
+                    <button class="operators" id="divide">/</button>
+                </div>
             </div>  
 
             <div class="row">
@@ -38,9 +42,13 @@
             </div>
 
             <div class="row">
-                <button class="numbers" id="0">0</button>
-                <button class="numbers" id="decimal">.</button>
-                <button id="equals">=</button>
+                <div class="column">
+                    <button class="numbers large" id="0">0</button>
+                </div>
+                <div class="column">
+                    <button class="numbers" id="decimal">.</button>
+                    <button id="equals">=</button>
+                </div>
             </div>
  
         </div>
