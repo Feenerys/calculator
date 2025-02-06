@@ -90,6 +90,8 @@ clearButton.addEventListener("click", () => {
   firstValue = "";
   secondValue = "";
   operation = "";
+  overwriteIndicator = false;
+  equalIndicator = false;
 });
 
 backspaceButton.addEventListener("click", () => {
